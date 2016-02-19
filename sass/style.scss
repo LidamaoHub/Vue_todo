@@ -1,0 +1,123 @@
+$border-black:rgba(77, 87, 99, 0.4);
+$tran-time:.8s;
+$card-width:400px;
+$font-black:rgba(77, 87, 99, 0.6);
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+}
+.todo-cover{
+  padding:20px 0px; 
+  border:2px solid blue;
+  width:480px;  
+  margin:0px auto;
+  
+}
+.app {
+  padding: 20px; 
+  display:block;
+  margin:0px auto;
+  width:462px;
+}
+
+.header {
+  text-align: center;
+  margin: 10px auto;
+  font-size:25px;
+  color:$font-black;
+  font-weight:500;
+  font-family: 'Lato', sans-serif;
+  
+}
+
+.todo-input {
+  text-align: center;
+  height: 20px;
+  border: 1px solid $border-black;
+  border-radius: 4px;
+  padding: 10px;
+  outline: medium;
+  transition: all $tran-time;
+  font-size:13px;
+  &:focus {
+    transition: all $tran-time;
+    box-shadow: 0px 0px 9px  $border-black;
+    border: 1px solid rgba(77, 87, 99, 0.3);
+  }
+  width:$card-width;
+}
+.todo-content{
+  width:$card-width;
+  height:20px;
+  padding:10px;
+  margin-top:10px;
+  border:1px solid $border-black;
+  border-radius:4px;
+  line-height:20px;
+  font-size:0px;
+  input[type="checkbox"]{
+    width:12px;
+    height:12px;
+    line-height:20px;
+    font-size:20px;
+    margin:0px;
+    padding:0px;
+    float:left;
+    position:relative;
+    top:50%;
+    margin-top:-6px;
+  } 
+  label{
+    font-size:15px;
+    margin:0px 10px;
+    width:330px;
+    display:inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;/*不换行*/
+    color:$font-black;
+  }
+  button{
+    float:right;
+    border-radius:50%;
+    border:1px solid $border-black;
+    background-color:transparent;
+    width:20px;
+    height:20px;
+    padding:0px;
+    position:relative;
+    &:before{
+      content:"";
+      border-bottom:1px solid $border-black;
+      transform:rotate(45deg);
+      height:9px;
+      width:18px;
+      display:block;
+      font-size:0px;
+      position:absolute;
+      top:0px;
+      transform-origin:center 9px 0;
+    }
+    &:after{
+      content:"";
+      border-bottom:1px solid $border-black;
+      transform:rotate(-45deg);
+      height:9px;
+      width:18px;
+      display:block;
+      font-size:0px;
+      position:absolute;
+      top:0px;
+      transform-origin:center 9px 0;
+    }
+   
+  }
+  
+}

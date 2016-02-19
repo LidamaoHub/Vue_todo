@@ -1,0 +1,27 @@
+<link href='http://fonts.useso.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+<div class="todo-cover">
+<p class="header">
+  Todo-List</p>
+<div class="app">
+  <input type="text" class="todo-input" v-model="new_todo" @keyup.enter="add_todo" placeholder="输入待办事项后回车添加" >
+  <div class="todo-content" v-for="todo in todos">
+    <input type="checkbox" id="checkbox_{{$index}}">
+    <label for="checkbox_{{$index}}">{{todo.content}}</label>
+    <button @click="remove_todo($index)"></button>
+
+  </div>
+  <br>
+  <div class="todo-content" v-for="todo in removed_todos">
+    <input type="checkbox" id="checkbox_{{$index}}">
+    <label for="checkbox_{{$index}}">{{todo.content}}</label>
+    <button @click="remove_todo($index)"></button>
+
+  </div>
+
+</div>
+</div>
+
+<script src="vue.js"></script>
+<script src="script.js"></script>
